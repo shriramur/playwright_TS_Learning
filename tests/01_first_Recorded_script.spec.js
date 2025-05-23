@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('First playwright recorder script', async ({ page }) => {
+  await page.goto('https://demo.automationtesting.in/Register.html');
+  await page.getByRole('textbox', { name: 'First Name' }).click();
+  await page.getByRole('textbox', { name: 'First Name' }).fill('tester1');
+  await page.getByRole('textbox', { name: 'Last Name' }).fill('Tester1');
+  await page.locator('textarea').fill('Tester 1 adderess');
+  await page.locator('input[type="email"]').fill('tester@email.co');
+  await page.locator('input[type="email"]').click();
+  await page.locator('input[type="tel"]').click();
+  await page.locator('input[type="tel"]').fill('1234567890');
+  await page.getByRole('radio', { name: 'FeMale' }).check();
+  await page.locator('#checkbox1').check();
+  await page.locator('#checkbox3').check();
+  await page.locator('#msdd').click();
+  await page.getByText('English').click();
+  await page.getByText('German').click();
+  await page.getByText('Full Name* Address Email').click();
+  await page.locator('#Skills').selectOption('C++');
+  await page.getByLabel('', { exact: true }).click();
+  await page.getByRole('treeitem', { name: 'Australia' }).click();
+  await page.locator('#yearbox').selectOption('1931');
+  await page.locator('#basicBootstrapForm div').filter({ hasText: 'Date Of Birth year' }).getByRole('combobox').nth(1).selectOption('October');
+  await page.locator('#daybox').selectOption('16');
+  await page.locator('#firstpassword').click();
+  await page.locator('#firstpassword').fill('test1');
+  await page.locator('#firstpassword').press('Tab');
+  await page.locator('#secondpassword').fill('test1');
+});

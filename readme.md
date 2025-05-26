@@ -40,3 +40,10 @@ npx playwright test 02_first_script.spec --repeat-each=3
 
 Retries: This can also be set using config
 npx playwright test tests/02_first_script.spec.js --retries=2
+
+
+To run last failed tests:
+npx playwright test --last-failed
+
+to run parallely with specified number of workere: 
+npx playwright test 20_testReportrs --workers 4

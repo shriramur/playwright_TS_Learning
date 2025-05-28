@@ -47,3 +47,12 @@ npx playwright test --last-failed
 
 to run parallely with specified number of workere: 
 npx playwright test 20_testReportrs --workers 4
+
+
+allure report
+allure generate allure-results --clean
+
+
+only changed tests running:
+npx playwright test --only-changed // this will run the test wich have only chnaged based on git.
+
